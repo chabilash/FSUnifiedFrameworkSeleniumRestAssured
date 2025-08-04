@@ -4,7 +4,7 @@
         <classes>
             <class name="in.podtest.E2ETestFlow">
                 <methods>
-                    <include name="tc2"></include>
+                    <include name="testLoginFlow"></include>
                 </methods>
             </class>
             
