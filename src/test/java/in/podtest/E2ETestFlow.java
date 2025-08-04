@@ -18,8 +18,8 @@ public class E2ETestFlow {
 
 
     WebDriver wd;
-    String email = "chabilash@gmail.com";
-    String password = "Note@8008";
+    String email = "chabilash.qa@gmail.com";
+    String password = "P@ssword";
     String expecUsername = "Abilash Chintalacheruvula";
 
     @BeforeTest
