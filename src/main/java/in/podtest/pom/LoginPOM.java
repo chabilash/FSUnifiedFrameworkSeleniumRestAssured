@@ -3,12 +3,20 @@ package in.podtest.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPOM {
-
-    private WebDriver wd;
+public class LoginPOM extends BasePOM{
 
     public LoginPOM(WebDriver wd){
-        this.wd = wd;
+        super(wd);
+
+    }
+
+    public LoginPOM get(){
+
+        String resourcePath = "/account/login";
+        String baseURL = "https://demo.evershop.io";
+        String newURL = baseURL.concat(resourcePath);
+        get(newURL);
+        return this;
     }
 
     private final By emailTB            = By.xpath("//input[@name='email']");
@@ -35,14 +43,6 @@ public class LoginPOM {
     public LoginPOM fillCredentials(String emailID, String password){
         wd.findElement(emailTB).sendKeys(emailID);
         wd.findElement(passwordTB).sendKeys(password);
-        return this;
-    }
-
-    public LoginPOM get(){
-        String resourcePath = "/account/login";
-        String baseURL = "https://demo.evershop.io";
-        String newURL = baseURL.concat(resourcePath);
-        wd.get(newURL);
         return this;
     }
 
